@@ -3,230 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohan S | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#060816">
+    <meta name="description" content="Mohan S — Computer Science Engineering student, Java programmer and web developer portfolio.">
+    <title>Mohan S | Anime 3D Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="gradient"></div>
-
-<header>
-
-<nav>
-
-<h2 class="logo">Mohan<span>.S</span></h2>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#skills">Skills</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<section class="hero" id="home">
-
-<div class="left">
-
-<h3>Hello 👋 I'm</h3>
-
-<h1>Mohan S</h1>
-
-<h2 id="typing"></h2>
-
-<p>
-
-Passionate Computer Science student focused on
-Web Development, Java and AI Projects.
-
-</p>
-
-<div class="buttons">
-
-<a href="#contact" class="btn">Hire Me</a>
-
-<a href="resume.pdf" class="btn2">Download Resume</a>
-
-</div>
-
-<div class="social">
-
-<a href="https://github.com/Mohan17940" target="_blank">
-
-<i class="fab fa-github"></i>
-
-</a>
-
-<a href="https://www.linkedin.com/in/mohan-s-545a69329"
-
-target="_blank">
-
-<i class="fab fa-linkedin"></i>
-
-</a>
-
-<a href="mailto:monishmsd1470@gmail.com">
-
-<i class="fas fa-envelope"></i>
-
-</a>
-
-</div>
-
-</div>
-
-<div class="right">
-
-<img src="profile.jpg.jpeg">
-
-</div>
-
-</section>
-
-</header>
-
-<section class="about" id="about">
-
-<h2>About Me</h2>
-
-<p>
-
-I'm a Computer Science Engineering student passionate about
-building modern websites and solving real-world problems.
-
-I enjoy creating responsive web applications using HTML,
-CSS, JavaScript, Java and Python.
-
-</p>
-
-</section>
-
-<section class="skills" id="skills">
-
-<h2>Skills</h2>
-
-<div class="skill-box">
-
-<div class="card">HTML5</div>
-
-<div class="card">CSS3</div>
-
-<div class="card">JavaScript</div>
-
-<div class="card">Java</div>
-
-<div class="card">Python</div>
-
-<div class="card">Git</div>
-
-<div class="card">GitHub</div>
-
-<div class="card">Responsive Design</div>
-
-</div>
-
-</section>
-
-<section class="projects" id="projects">
-
-<h2>Projects</h2>
-
-<div class="project-container">
-
-<div class="project">
-
-<h3>AI Chat Bot</h3>
-
-<p>
-
-Responsive chatbot developed using HTML, CSS
-and JavaScript.
-
-</p>
-
-<a href="https://github.com/Mohan17940"
-target="_blank">
-
-View Project
-
-</a>
-
-</div>
-
-<div class="project">
-
-<h3>Student CRUD</h3>
-
-<p>
-
-Student management system using HTML,
-CSS and JavaScript.
-
-</p>
-
-<a href="https://mohan17940.github.io/student-form-crud/"
-target="_blank">
-
-Live Demo
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="contact" id="contact">
-
-<h2>Contact Me</h2>
-
-<form>
-
-<input type="text"
-placeholder="Your Name">
-
-<input type="email"
-placeholder="Your Email">
-
-<textarea rows="6"
-placeholder="Your Message"></textarea>
-
-<button>Send Message</button>
-
-</form>
-
-</section>
-
-<footer>
-
-<p>
-
-© 2026 Mohan S | Portfolio
-
-</p>
-
-</footer>
-
-<script src="script.js"></script>
-
+    <div class="page-bg" aria-hidden="true">
+        <div class="aurora aurora-a"></div>
+        <div class="aurora aurora-b"></div>
+        <div class="grid-floor"></div>
+        <canvas id="particleCanvas"></canvas>
+    </div>
+
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                Mohan<span>.s</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a class="nav-link active" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#skills">Skills</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section-shell" id="home">
+            <div class="hero-copy reveal">
+                <p class="eyebrow"><span class="status-dot"></span> Available for opportunities</p>
+
+                <p class="hero-kicker">Hello, I'm</p>
+                <h1>Mohan <span>S</span></h1>
+
+                <div class="typing-line">
+                    <span class="typing-prefix">I build as a </span>
+                    <span id="typing"></span><span class="caret">|</span>
+                </div>
+
+                <p class="hero-description">
+                    Computer Science Engineering student focused on building clean,
+                    responsive web experiences with Java, Python, HTML, CSS and JavaScript.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary magnetic">
+                        <span>Explore Projects</span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="Mohan. S resume.pdf" class="btn btn-ghost magnetic" download>
+                        <span>Download Resume</span>
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/Mohan17940" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mohan-s-545a69329" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:monishmsd1470@gmail.com" aria-label="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal" data-tilt>
+                <div class="visual-aura"></div>
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-three"></div>
+
+                <div class="profile-card">
+                    <div class="profile-topline">
+                        <span>MOHAN.S // 01</span>
+                        <span>ONLINE</span>
+                    </div>
+
+                    <div class="profile-image-wrap">
+                        <div class="scanline"></div>
+                        <img src="profile.jpg.jpeg" alt="Mohan S profile">
+                        <div class="image-shine"></div>
+                    </div>
+
+                    <div class="profile-bottomline">
+                        <span>CSE • 2027</span>
+                        <span>DEV MODE</span>
+                    </div>
+                </div>
+
+                <div class="float-chip chip-top">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Build.</span>
+                </div>
+
+                <div class="float-chip chip-right">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Learn.</span>
+                </div>
+
+                <div class="float-chip chip-bottom">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Ship.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section-shell" id="about">
+            <div class="section-heading reveal">
+                <p class="section-tag">01 / ABOUT</p>
+                <h2>Built with curiosity.<br><span>Driven by code.</span></h2>
+            </div>
+
+            <div class="about-grid">
+                <article class="about-panel glass-panel reveal" data-tilt>
+                    <div class="panel-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <h3>Who I Am</h3>
+                    <p>
+                        I'm a Computer Science Engineering student who enjoys turning ideas
+                        into practical, responsive web applications and interactive experiences.
+                    </p>
+                    <p>
+                        I like learning by building — from CRUD systems and API integrations
+                        to browser-based projects that solve everyday problems.
+                    </p>
+                </article>
+
+                <div class="about-stats">
+                    <div class="stat-card glass-panel reveal">
+                        <span>01</span>
+                        <strong>Web</strong>
+                        <small>Frontend Development</small>
+                    </div>
+                    <div class="stat-card glass-panel reveal">
+                        <span>02</span>
+                        <strong>Java</strong>
+                        <small>Programming & Logic</small>
+                    </div>
+                    <div class="stat-card glass-panel reveal">
+                        <span>03</span>
+                        <strong>API</strong>
+                        <small>Real-time Data Integration</small>
+                    </div>
+                    <div class="stat-card glass-panel reveal">
+                        <span>04</span>
+                        <strong>Grow</strong>
+                        <small>Always Learning</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section-shell" id="skills">
+            <div class="section-heading reveal">
+                <p class="section-tag">02 / SKILLS</p>
+                <h2>My current <span>stack.</span></h2>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-card glass-panel reveal" data-tilt>
+                    <div class="skill-number">01</div>
+                    <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>HTML</h3>
+                    <p>Semantic, structured and accessible web pages.</p>
+                    <div class="skill-meter"><span style="--level: 90%"></span></div>
+                </article>
+
+                <article class="skill-card glass-panel reveal" data-tilt>
+                    <div class="skill-number">02</div>
+                    <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                    <h3>CSS</h3>
+                    <p>Responsive layouts, animations and modern UI.</p>
+                    <div class="skill-meter"><span style="--level: 88%"></span></div>
+                </article>
+
+                <article class="skill-card glass-panel reveal" data-tilt>
+                    <div class="skill-number">03</div>
+                    <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive interfaces, DOM logic and API integration.</p>
+                    <div class="skill-meter"><span style="--level: 84%"></span></div>
+                </article>
+
+                <article class="skill-card glass-panel reveal" data-tilt>
+                    <div class="skill-number">04</div>
+                    <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+                    <h3>Java</h3>
+                    <p>Core programming, OOP and problem-solving practice.</p>
+                    <div class="skill-meter"><span style="--level: 80%"></span></div>
+                </article>
+
+                <article class="skill-card glass-panel reveal" data-tilt>
+                    <div class="skill-number">05</div>
+                    <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p>Programming fundamentals and practical scripting.</p>
+                    <div class="skill-meter"><span style="--level: 76%"></span></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="projects section-shell" id="projects">
+            <div class="section-heading reveal">
+                <p class="section-tag">03 / PROJECTS</p>
+                <h2>Things I've <span>built.</span></h2>
+            </div>
+
+            <div class="project-grid">
+
+                <article class="project-card glass-panel reveal" data-tilt>
+                    <div class="project-top">
+                        <div class="project-index">01</div>
+                        <div class="project-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    </div>
+                    <div class="project-badge">CRUD APPLICATION</div>
+                    <h3>Student Form CRUD</h3>
+                    <p>
+                        A student management web app with create, read, update and delete
+                        functionality, built with a responsive and simple user interface.
+                    </p>
+                    <div class="tech-row">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <a class="project-link" href="https://mohan17940.github.io/student-form-crud/" target="_blank" rel="noopener noreferrer">
+                        <span>Live Demo</span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <article class="project-card glass-panel reveal" data-tilt>
+                    <div class="project-top">
+                        <div class="project-index">02</div>
+                        <div class="project-icon"><i class="fa-solid fa-robot"></i></div>
+                    </div>
+                    <div class="project-badge">RULE-BASED</div>
+                    <h3>Chatbot</h3>
+                    <p>
+                        An interactive browser chatbot that matches user inputs to predefined
+                        rules and responses for a lightweight conversational experience.
+                    </p>
+                    <div class="tech-row">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <a class="project-link" href="https://mohan17940.github.io/AI-CHATBOT/" target="_blank" rel="noopener noreferrer">
+                        <span>Live Demo</span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+                <article class="project-card glass-panel reveal" data-tilt>
+                    <div class="project-top">
+                        <div class="project-index">03</div>
+                        <div class="project-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+                    </div>
+                    <div class="project-badge">WEATHER API</div>
+                    <h3>M&amp;N Sky</h3>
+                    <p>
+                        A weather application that connects to a live weather API and displays
+                        current conditions for a searched city through a clean interface.
+                    </p>
+                    <div class="tech-row">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span>
+                    </div>
+                    <a class="project-link" href="https://mohan17940.github.io/M-N-sky/" target="_blank" rel="noopener noreferrer">
+                        <span>Live Demo</span><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="contact section-shell" id="contact">
+            <div class="section-heading reveal">
+                <p class="section-tag">04 / CONTACT</p>
+                <h2>Let's build something <span>cool.</span></h2>
+                <p class="heading-subtext">Have a project, internship or opportunity in mind? Send me a message.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-copy glass-panel reveal" data-tilt>
+                    <div class="contact-orb"><i class="fa-solid fa-paper-plane"></i></div>
+                    <h3>Say hello.</h3>
+                    <p>
+                        I'm always open to learning opportunities, internships,
+                        collaborative projects and conversations around technology.
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:monishmsd1470@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>monishmsd1470@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/Mohan17940" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                            <span>github.com/Mohan17940</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohan-s-545a69329" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>linkedin.com/in/mohan-s-545a69329</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form glass-panel reveal" action="https://formsubmit.co/monishmsd1470@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://mohan17940.github.io/">
+
+                    <label>
+                        <span>Your Name</span>
+                        <input type="text" name="Name" placeholder="Enter your name" required>
+                    </label>
+
+                    <label>
+                        <span>Your Email</span>
+                        <input type="email" name="Email" placeholder="you@example.com" required>
+                    </label>
+
+                    <label>
+                        <span>Message</span>
+                        <textarea name="Message" rows="6" placeholder="Tell me about your idea..." required></textarea>
+                    </label>
+
+                    <button type="submit" class="submit-btn magnetic">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-line"></div>
+        <p>© 2026 Mohan S — Built with code, curiosity &amp; a little anime energy.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
